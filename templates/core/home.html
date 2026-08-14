@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}SafeGloss — multilingual glossary support{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">Open-source classroom language support</p>
+    <h1>Create multilingual glossaries for study and exams.</h1>
+    <p class="lead">Teachers publish subject vocabulary in each learner's preferred language. Exam Mode limits students to approved bilingual term pairs during scheduled assessment windows.</p>
+    <div class="actions">
+      <a class="button" href="{% url 'accounts:signup' %}">Get started</a>
+      <a class="button secondary" href="https://github.com/w9smz8qkh6-stack/safegloss-core" rel="noreferrer">View source</a>
+    </div>
+  </div>
+  <aside class="card hero-card">
+    <h2>Public core</h2>
+    <ul>
+      <li>Multilingual terms and examples</li>
+      <li>Courses, rosters, and enrollment</li>
+      <li>Study Mode and restricted Exam Mode</li>
+      <li>CSV import/export and print-friendly views</li>
+      <li>No provider account required</li>
+    </ul>
+  </aside>
+</section>
+<section class="feature-grid" aria-label="Core features">
+  <article class="card"><h2>Teacher-owned</h2><p>Create and revise glossaries without sending classroom content to an external AI provider.</p></article>
+  <article class="card"><h2>Student-focused</h2><p>Show the best available translation for each student's preferred language.</p></article>
+  <article class="card"><h2>Self-hostable</h2><p>Run the same application with PostgreSQL on school infrastructure or a cloud provider of your choice.</p></article>
+</section>
+{% endblock %}

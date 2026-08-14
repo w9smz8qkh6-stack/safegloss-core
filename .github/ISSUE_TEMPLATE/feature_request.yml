@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a change that fits the public-core mission.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Privacy, licensing, provider, and maintenance considerations
+    validations:
+      required: true

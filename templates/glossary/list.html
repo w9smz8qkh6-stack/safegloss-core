@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block title %}Glossaries — SafeGloss{% endblock %}
+{% block content %}<div class="page-heading"><h1>Glossaries</h1>{% if user.is_teacher %}<a class="button" href="{% url 'glossary:create' %}">Create glossary</a>{% endif %}</div><div class="card-grid">{% for glossary in glossaries %}<a class="card card-link" href="{% url 'glossary:detail' glossary.pk %}"><strong>{{ glossary.title }}</strong><span>{{ glossary.terms.count }} terms · {{ glossary.default_target_language }}</span></a>{% empty %}<p>No glossaries are available.</p>{% endfor %}</div>{% endblock %}

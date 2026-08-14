@@ -1,0 +1,3 @@
+{% extends "base.html" %}
+{% block title %}Courses — SafeGloss{% endblock %}
+{% block content %}<div class="page-heading"><h1>Courses</h1><div class="actions">{% if user.is_teacher %}<a class="button" href="{% url 'courses:create' %}">Create course</a>{% else %}<a class="button" href="{% url 'courses:join' %}">Join course</a>{% endif %}</div></div><div class="card-grid">{% for course in courses %}<a class="card card-link" href="{% url 'courses:detail' course.pk %}"><strong>{{ course.name }}</strong><span>{% if course.is_exam_mode %}Exam Mode{% else %}Study Mode{% endif %}</span></a>{% empty %}<p>No courses found.</p>{% endfor %}</div>{% endblock %}

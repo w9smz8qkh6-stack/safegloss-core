@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ course.name }} — SafeGloss{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">Course</p><h1>{{ course.name }}</h1><p>{{ course.description }}</p></div><span class="mode-badge {% if course.is_exam_mode %}exam{% endif %}">{% if course.is_exam_mode %}Exam Mode{% else %}Study Mode{% endif %}</span></div>
+{% if is_owner %}<p class="callout">Student join code: <strong>{{ course.join_code }}</strong></p>{% endif %}
+<section><h2>Glossaries</h2><div class="card-grid">{% for link in course.course_glossaries.all %}<article class="card"><a href="{% url 'glossary:course-view' course.pk link.glossary.pk %}"><strong>{{ link.glossary.title }}</strong></a><p>{{ link.glossary.terms.count }} terms</p>{% if is_owner %}<form method="post" action="{% url 'courses:unlink-glossary' course.pk link.pk %}">{% csrf_token %}<button class="link-button danger" type="submit">Unlink</button></form>{% endif %}</article>{% empty %}<p>No glossaries have been linked.</p>{% endfor %}</div></section>
+{% if is_owner %}
+<div class="two-column">
+  <section class="card"><h2>Link a glossary</h2><form method="post" action="{% url 'courses:link-glossary' course.pk %}" class="form-stack">{% csrf_token %}{{ link_form.as_div }}<button class="button small" type="submit">Link glossary</button></form></section>
+  <section class="card"><h2>Mode</h2><form method="post" action="{% url 'courses:exam-mode' course.pk %}" class="form-stack">{% csrf_token %}{{ exam_form.as_div }}<button class="button danger" name="action" value="exam" type="submit">Start Exam Mode</button><button class="button secondary" name="action" value="study" type="submit">Return to Study Mode</button></form></section>
+  <section class="card"><h2>Schedule Exam Mode</h2><form method="post" action="{% url 'courses:schedule-create' course.pk %}" class="form-stack">{% csrf_token %}{{ schedule_form.as_div }}<button class="button small" type="submit">Add window</button></form>{% for schedule in course.mode_schedules.all %}<div class="list-row"><span>{{ schedule.starts_at }}–{{ schedule.ends_at }}</span><form method="post" action="{% url 'courses:schedule-delete' course.pk schedule.pk %}">{% csrf_token %}<button class="link-button danger" type="submit">Remove</button></form></div>{% endfor %}</section>
+  <section class="card"><h2>Rosters</h2><form method="post" action="{% url 'courses:roster-create' course.pk %}" class="form-stack">{% csrf_token %}{{ roster_form.as_div }}<button class="button small" type="submit">Add roster</button></form>{% for roster in course.rosters.all %}<p>{{ roster.name }} ({{ roster.enrollments.count }})</p>{% endfor %}</section>
+</div>
+{% endif %}
+{% endblock %}

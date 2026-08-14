@@ -1,0 +1,17 @@
+# Changelog
+
+All notable changes to SafeGloss Core will be recorded here.
+
+The project follows semantic versioning after the first stable release. During alpha, minor releases may contain schema or interface changes documented in release notes.
+
+## Unreleased
+
+### Added
+
+- Clean public-core Django application.
+- Email-based teacher and student accounts.
+- Courses, rosters, enrollment, and join codes.
+- Multilingual glossary, term, and translation models.
+- Study Mode, manual Exam Mode, and scheduled Exam Mode.
+- CSV import/export and print-friendly student views.
+- Public contributor, security, support, and architecture documentation.
