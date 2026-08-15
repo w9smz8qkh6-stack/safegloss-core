@@ -6,6 +6,8 @@ The project follows semantic versioning after the first stable release. During a
 
 ## Unreleased
 
+## 0.1.0 - 2026-08-15
+
 ### Added
 
 - Clean public-core Django application.
