@@ -84,6 +84,16 @@ config/     vendor-neutral Django configuration
 
 The architectural boundary and exclusions are recorded in [ADR-0001](docs/decisions/0001-public-core-boundary.md).
 
+## Relationship to safegloss.com
+
+The service at `safegloss.com` is a private downstream distribution of SafeGloss Core.
+It combines this public foundation with hosted-only integrations, operations, research,
+and branding. Core remains independently self-hostable and does not require access to
+the hosted repository or any hosted provider account.
+
+Accepted Core changes are periodically merged downstream through reviewed integration
+branches. Hosted-only code is not automatically copied back into Core.
+
 ## Privacy and outbound services
 
 The default application does not load analytics, call an AI provider, send email, or connect to a school information system. Console email is used by default. Operators are responsible for their deployment, backups, access policy, and applicable student-data requirements.
