@@ -12,7 +12,8 @@ RUN python -m pip install --no-cache-dir --upgrade pip \
     && python -m pip install --no-cache-dir -r requirements.txt
 
 COPY --chown=appuser:appuser . .
-RUN DEBUG=True DATABASE_URL=sqlite:////tmp/safegloss-build.sqlite3 \
+RUN DEBUG=False DJANGO_SECRET_KEY=unsafe-build-only-key \
+    DATABASE_URL=sqlite:////tmp/safegloss-build.sqlite3 \
     python manage.py collectstatic --noinput
 USER appuser
 
