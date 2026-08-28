@@ -84,3 +84,12 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: docker build --tag safegloss-core:ci .
+      - name: Render production templates from the built image
+        run: |
+          docker run --rm \
+            --env DJANGO_SECRET_KEY=unsafe-ci-only-key \
+            --env DATABASE_URL=sqlite:////tmp/safegloss-ci.sqlite3 \
+            --env ALLOWED_HOSTS=testserver \
+            safegloss-core:ci \
+            python manage.py shell -c \
+            "from django.test import Client; client = Client(); assert client.get('/').status_code == 200; assert client.get('/accounts/login/').status_code == 200"
