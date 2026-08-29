@@ -56,6 +56,7 @@ pytest
 ruff check .
 ruff format --check .
 pip-audit -r requirements.txt
+python scripts/check_documentation_updates.py
 ```
 
 ## CSV format

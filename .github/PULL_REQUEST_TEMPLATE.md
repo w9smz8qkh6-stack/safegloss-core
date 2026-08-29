@@ -7,7 +7,15 @@
 - [ ] Django checks and migration check pass
 - [ ] Tests pass
 - [ ] Ruff check and format check pass
+- [ ] Governing documentation was compared with the finished behavior and updated
+- [ ] Documentation completion check passes
 - [ ] No credentials, private data, provider payloads, or unlicensed content added
 
-## Data, schema, security, and rollback impact
+## Documentation impact
 
+List the setup, architecture, operations, public-contract, security, user,
+changelog, project-state, workstream, or decision records reviewed and changed.
+If another canonical SafeGloss repository is affected, list its documentation
+changes and the integration order.
+
+## Data, schema, security, and rollback impact

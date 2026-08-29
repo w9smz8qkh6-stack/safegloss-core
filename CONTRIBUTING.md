@@ -13,10 +13,25 @@ Thank you for helping improve transparent language support for schools.
 1. Fork the repository and create a focused branch.
 2. Install `requirements-dev.txt` and use PostgreSQL.
 3. Add or update tests for changed behavior.
-4. Run all commands listed under “Quality gates” in the README.
-5. Open a pull request describing behavior, tests, data/schema impact, and rollback considerations.
+4. Review and update the durable documentation affected by the finished change.
+5. Run all commands listed under “Quality gates” in the README.
+6. Open a pull request describing behavior, documentation, tests, data/schema impact, and rollback considerations.
 
 Prefer small, cohesive changes. Avoid combining feature work with unrelated formatting or refactoring.
+
+## Documentation completion
+
+Documentation is part of implementation, not a later follow-up. Every change to
+code, behavior, interfaces, tests, scripts, dependencies, configuration,
+security, deployment, operations, architecture, or user-visible output must
+include the relevant documentation updates in the same task. Follow
+[`docs/development/DOCUMENTATION_MAINTENANCE.md`](docs/development/DOCUMENTATION_MAINTENANCE.md)
+for the documentation map, semantic review procedure, cross-repository rule,
+generated-artifact limits, and incomplete-handoff requirements.
+
+Run `python scripts/check_documentation_updates.py` before submitting. Its
+path-based result is evidence only and does not replace comparing the documents
+with the finished behavior.
 
 ## Database changes
 
