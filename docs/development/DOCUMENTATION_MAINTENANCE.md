@@ -71,3 +71,7 @@ force-push, rewrite history, bypass branch protection, expose secrets, or
 proceed past failed checks. Core itself has no production deployment target;
 reviewed Core changes reach production only through the documented Hosted
 integration flow.
+
+Core's protected `main` uses scoped task branches and pull requests. Required
+checks must pass before merge, and the standing cadence does not waive a
+required human approval or permit administrator bypass.

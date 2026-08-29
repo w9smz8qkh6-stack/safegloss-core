@@ -9,7 +9,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 DOCUMENTATION_PREFIXES = ("docs/", "docs-site/docs/")
 DOCUMENTATION_ROOT_SUFFIXES = (".md", ".mdx", ".rst")
 DOCUMENTATION_FILES = {
