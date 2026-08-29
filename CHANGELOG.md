@@ -17,6 +17,8 @@ The project follows semantic versioning after the first stable release. During a
 - Established a standing cadence to commit and push task-owned, verified Core changes
   at cohesive green checkpoints and task completion. Production delivery remains a
   separate reviewed Core-to-Hosted integration step.
+- Clarified that protected `main` changes use scoped task branches, pull requests, and
+  required checks; administrator bypass is not part of the standing cadence.
 
 ## 0.1.0 - 2026-08-15
 

@@ -27,3 +27,6 @@ SafeGloss Core is the vendor-neutral open-source glossary and exam-access applic
   never force-push, rewrite history, bypass branch protection, or include
   unrelated work. Core has no production deployment target; integrate reviewed
   Core changes into Hosted through the documented downstream flow.
+- Core `main` requires a scoped task branch and pull request. Wait for all
+  required checks and merge only when repository gates pass and no required
+  human approval remains; administrator bypass is not part of the cadence.
