@@ -7,24 +7,27 @@ first reading application source. Read the documents in the order below.
 
 1. [Repository README](../README.md) — product purpose, public boundary,
    supported setup, and primary commands.
-2. [System architecture](architecture/SYSTEM.md) — runtime shape, domain
+2. [Current development state](CURRENT_STATE.md) — lifecycle, current
+   engineering and integration posture, limitations, next checkpoint, and the
+   boundary between durable documentation and live verification.
+3. [System architecture](architecture/SYSTEM.md) — runtime shape, domain
    ownership, request and data flows, persistence, and extension boundaries.
-3. [Product workflows](product/WORKFLOWS.md) — what teachers, students, and
+4. [Product workflows](product/WORKFLOWS.md) — what teachers, students, and
    operators do and how Study and Exam Mode behave.
-4. [Authorization model](security/AUTHORIZATION.md) and
+5. [Authorization model](security/AUTHORIZATION.md) and
    [security model](development/SECURITY_MODEL.md) — roles, object-level
    enforcement, trust boundaries, and explicit security limitations.
-5. [Generated data model](generated/data-model.md),
+6. [Generated data model](generated/data-model.md),
    [route inventory](generated/routes.md), and
    [application inventory](generated/application-inventory.md) — exact
    structural facts derived from current source.
-6. [Deployment guide](development/DEPLOYMENT.md),
+7. [Deployment guide](development/DEPLOYMENT.md),
    [generated configuration inventory](generated/configuration.md), and
    [generated deployment topology](generated/deployment-topology.md) —
    operator contract and repository-defined runtime topology.
-7. [Commercial relationship](architecture/COMMERCIAL_RELATIONSHIP.md) — how
+8. [Commercial relationship](architecture/COMMERCIAL_RELATIONSHIP.md) — how
    this public upstream relates to the private hosted product.
-8. [Decision records](decisions/) and [changelog](../CHANGELOG.md) — durable
+9. [Decision records](decisions/) and [changelog](../CHANGELOG.md) — durable
    decisions and externally meaningful change history.
 
 The generated/authored documentation contract is recorded in
@@ -54,6 +57,8 @@ finished behavior as described in
 Generated references describe committed repository configuration. They do not
 claim that a deployed environment is running, healthy, or configured exactly
 like the repository. Live operational state must be verified by the operator.
+`CURRENT_STATE.md` follows the same rule: it summarizes durable posture and
+routes volatile branch, pull-request, CI, and environment facts to live checks.
 
 ## Historical material
 

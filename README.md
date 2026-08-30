@@ -5,8 +5,9 @@ SafeGloss Core is a self-hosted multilingual glossary and exam-access support ap
 This repository is the vendor-neutral public core. It does not include the original dissertation research instrument, reading and quiz system, commercial billing, hosted-service configuration, behavioral analytics, or provider-specific roster integrations.
 
 Start with the [documentation index](docs/README.md) for the canonical reading
-order covering architecture, product workflows, authorization, generated data
-and route references, deployment, and the relationship to SafeGloss Commercial.
+order covering current development state, architecture, product workflows,
+authorization, generated data and route references, deployment, and the
+relationship to SafeGloss Commercial.
 
 ## Core features
 

@@ -13,6 +13,9 @@ Identify the records that govern the changed area before editing:
 
 - `docs/README.md` for the canonical reading order, authority, and freshness
   contract;
+- `docs/CURRENT_STATE.md` for durable lifecycle, engineering/integration
+  posture, limitations, active workstream, and next checkpoint; use live Git,
+  PR, CI, and operator evidence for volatile status;
 - `README.md` for public scope, features, setup, supported environments, data
   formats, and primary quality gates;
 - `docs/architecture/SYSTEM.md`, `docs/product/WORKFLOWS.md`, and
@@ -29,8 +32,7 @@ Identify the records that govern the changed area before editing:
   contracts;
 - `docs/decisions/` for durable architectural and repository-boundary
   decisions; and
-- `CHANGELOG.md`, plus any active project-state, capability, or workstream
-  record added later, for externally meaningful changes and current status.
+- `CHANGELOG.md` for externally meaningful changes and release history.
 
 ## Completion procedure
 
@@ -40,9 +42,10 @@ Identify the records that govern the changed area before editing:
 2. Update affected setup instructions, architecture, operational runbooks,
    public contracts and data formats, security and privacy guidance, user
    documentation, and changelog entries.
-3. Update project-state, capability, workstream, and decision records whenever
-   their claims or status change. Add or amend an ADR for a durable
-   architectural decision.
+3. Update `docs/CURRENT_STATE.md`, capability, workstream, and decision records
+   whenever their durable claims or status change. Do not copy volatile branch,
+   pull-request, CI, or deployment state into prose when it can be verified
+   live. Add or amend an ADR for a durable architectural decision.
 4. If repository-owned tooling can safely regenerate facts, schemas,
    inventories, or indexes, use it and review the generated diff. Passing
    freshness, generation, link, or path checks is evidence only; it does not
@@ -70,6 +73,14 @@ not live deployment health or provider state.
 Run `python scripts/check_documentation_links.py` after changing documentation
 structure. It validates repository-local links and ensures generated Markdown
 retains its ownership marker.
+
+`docs/CURRENT_STATE.md` must change when product maturity, supported runtimes or
+database posture, repository ownership, the Core/Commercial boundary, delivery
+or deployment posture, important limitations, the durable active workstream,
+or the next integration checkpoint changes by meaning. Review it for every
+such change even when no automated path rule can establish semantic impact.
+Ordinary implementation changes do not require an edit when all of its claims
+remain accurate.
 
 ## Cross-repository and incomplete work
 

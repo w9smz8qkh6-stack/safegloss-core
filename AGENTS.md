@@ -26,11 +26,19 @@ SafeGloss Core is the vendor-neutral open-source glossary and exam-access applic
   Commit every resulting `docs/generated/` change and run the same command with
   `--check` before handoff. Generated files are source-derived facts and must
   never be edited by hand.
-- Start architecture and product orientation at `docs/README.md`. Keep its
-  reading order, authored system/workflow/authorization documents, generated
-  references, public/Commercial boundary, and decision records semantically
-  aligned. Automation does not replace the required human explanation of
-  intent, invariants, limitations, security, or operational consequences.
+- Start every repository orientation at `docs/README.md`, then read
+  `docs/CURRENT_STATE.md` before detailed architecture or implementation work.
+  Verify volatile branch, pull-request, CI, and environment facts live. Keep
+  the reading order, current-state summary, authored system, workflow, and
+  authorization documents, generated references, public/Commercial boundary,
+  and decision records semantically aligned. Automation does not replace the
+  required human explanation of intent, invariants, limitations, security, or
+  operational consequences.
+- Update `docs/CURRENT_STATE.md` when product maturity, supported runtime or
+  database posture, repository ownership, Core/Commercial boundaries, delivery
+  or deployment posture, important limitations, durable active work, or the
+  next integration checkpoint materially changes. Do not churn it when its
+  claims remain accurate.
 - After checks pass, commit task-owned changes and push the current branch to
   its existing configured upstream at a cohesive green checkpoint and task
   completion. Verify branch, remote, divergence, diff, and secret safety;

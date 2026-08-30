@@ -30,6 +30,14 @@ validates documentation links/ownership markers, and rejects drift. The normal
 contributor/agent workflow regenerates them after relevant source changes and
 still performs semantic review of authored documents.
 
+Repository self-reference is part of the same contract. The root README routes
+to `docs/README.md`; repository agent guidance requires that index and
+`docs/CURRENT_STATE.md` during orientation; and CI checks that this chain
+remains intact. The current-state record summarizes durable lifecycle,
+integration, delivery, limitation, active-workstream, and next-checkpoint
+context while routing volatile branch, PR, CI, and environment facts to live
+verification.
+
 The generator uses only Python's standard library and static repository input.
 It never imports Django, reads environment values, contacts a provider, or
 inspects live data. Generated topology is repository-configuration evidence,

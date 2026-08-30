@@ -15,6 +15,10 @@ The project follows semantic versioning after the first stable release. During a
   configuration, and Compose-topology references with Mermaid diagrams. CI now
   rejects stale generated documentation, while standing rules continue to
   require semantic updates to authored documentation.
+- Added a canonical current-development-state record and made it part of
+  repository orientation and change review. It summarizes durable lifecycle,
+  integration, delivery, and limitation context while requiring volatile Git,
+  CI, PR, and environment facts to be verified live.
 - Made documentation review and updates part of completion for every implementation,
   behavior, interface, test, script, dependency, configuration, security, deployment,
   operations, architecture, and user-visible change.

@@ -1,0 +1,82 @@
+# Current development state
+
+This is the canonical orientation record for SafeGloss Core's durable
+development state. Read it after the repository README and before detailed
+architecture or workflow documents. It summarizes the repository snapshot that
+contains it; source, migrations, tests, generated references, and the focused
+documents linked from `docs/README.md` remain authoritative for their specific
+contracts.
+
+## Product and lifecycle
+
+- SafeGloss Core is the public, vendor-neutral, independently self-hostable
+  upstream for glossary and exam-access support.
+- The project is pre-stable and currently uses the `0.1.x` development line.
+- Teachers manage courses, rosters, glossaries, translations, Study Mode, and
+  Exam Mode. Students use assigned bilingual vocabulary in their configured
+  language.
+- PostgreSQL is the canonical database. Python 3.12 and newer are supported by
+  the repository's current quality gates.
+- Core has no maintainer-operated production deployment target. A self-hoster
+  is responsible for its environment, secrets, backups, upgrades, monitoring,
+  and recovery.
+
+## Repository and integration posture
+
+- Core owns functionality that is safe for a public, provider-neutral product.
+  Billing, hosted-provider integrations, behavioral analytics, private
+  research operations, and customer data do not belong here.
+- SafeGloss Commercial is the private production downstream. Shared public
+  behavior is developed and reviewed in Core first, then integrated using the
+  Commercial repository's Core-upstream procedure.
+- The repository contains canonical authored product, architecture,
+  authorization, deployment, and boundary documentation plus deterministic
+  source-generated application, model, route, configuration, and Compose
+  references.
+- Protected-branch delivery uses a scoped branch, required CI, and required
+  human review. Standing delivery rules do not permit bypassing those gates.
+
+## Known limitations and invariants
+
+- Exam Mode restricts application content; it is not a secure browser,
+  proctoring system, or operating-system lockdown.
+- Authorization is enforced server-side and must remain covered by tests.
+- Generated inventories describe committed structure. They do not establish
+  the health, configuration, or version of a running installation.
+- Core must remain free of credentials, production/customer/research data,
+  curriculum source files, provider payloads, and Commercial-only code.
+
+## Active work and next checkpoint
+
+The commit containing this record includes the self-refreshing and
+self-referencing documentation baseline. When it is not yet on the protected
+default branch, the immediate delivery checkpoint is required review and merge
+before downstream Commercial integration. Do not infer whether that checkpoint
+is still open from this file; verify the current branch, pull requests, and CI
+live.
+
+Use repository evidence for the active development position:
+
+```bash
+git status -sb
+git log -1 --oneline
+gh pr status
+```
+
+Use the quality gates in `README.md` to establish implementation health. A
+clean working tree or green historical run does not prove current deployment
+health, and Core has no repository-authorized production target to inspect.
+
+## Maintenance contract
+
+Update this record when a change materially alters product maturity, supported
+runtime/database posture, repository ownership, Core/Commercial boundaries,
+delivery or deployment posture, important limitations, the durable active
+workstream, or its next integration checkpoint. Ordinary fixes do not require
+a wording change when every claim remains accurate.
+
+Agents and contributors must begin orientation through `docs/README.md`, read
+this record, then follow its links to the governing documents and perform the
+live checks relevant to the task. Automation can require that documentation
+was considered, but reviewers remain responsible for deciding whether this
+summary changed by meaning.
