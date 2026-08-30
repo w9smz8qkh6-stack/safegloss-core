@@ -280,11 +280,38 @@ security control.
 
 ## Responsive and inclusive behavior
 
+- Every interface, route, component, overlay, and meaningful workflow state
+  must be fully responsive at phone, laptop, and desktop viewport sizes. This
+  is a release requirement, not an optional enhancement for selected pages.
+- Responsiveness is continuous rather than three fixed compositions. The
+  interface must remain usable at every CSS-pixel width between the supported
+  examples, with breakpoints introduced where the content requires them rather
+  than for a named device model.
+- The minimum representative viewport evidence is:
+
+  | Class | Required examples | Primary risks to inspect |
+  |---|---|---|
+  | Phone | 320 CSS px wide and a common modern phone width such as 390 CSS px, including portrait and a relevant landscape check | Reflow, touch targets, compact navigation, action reachability, wrapping, virtual-keyboard obstruction |
+  | Laptop | 1024 and 1366 CSS px wide, including a 768-CSS-pixel-high view | Crowded navigation, constrained height, dialogs and wizards, dense forms or tables, sticky elements obscuring content |
+  | Desktop | 1440 and 1920 CSS px wide | Excessive line length, over-stretched forms, weak grouping, unused space that harms hierarchy, bounded content width |
+
+  Tablet widths remain required intermediate evidence when composition changes
+  there or the workflow is likely to be used on a tablet. Narrow reflow at 320
+  CSS pixels or equivalent browser zoom remains an accessibility requirement
+  even when the product does not target a named phone model.
 - Design content order and semantics before arranging columns.
-- Verify phone, tablet, desktop, narrow reflow, landscape, and long-content
-  states. Critical actions remain reachable without hover or precision.
+- Verify the complete task—not only the initial page—at each required viewport
+  class. Include the applicable loading, empty, validation, error, permission,
+  destructive, partial, success, and recovery states. Critical actions remain
+  reachable without hover, precision, or a viewport-specific hidden route.
 - Responsive changes may alter layout but must not remove the only label,
   instruction, status, or action.
+- Reflow must not create clipped or overlapping content, off-screen dialogs,
+  inaccessible fixed controls, or page-level horizontal scrolling. Genuine
+  two-dimensional content may use a bounded, labelled, discoverable scroll
+  region as described below.
+- At wider viewports, constrain reading measure, form width, and related content
+  grouping rather than stretching every surface to fill available space.
 - Tables preserve header relationships and gain an intentional small-screen
   strategy. Horizontal scrolling is acceptable for genuine two-dimensional
   data when the scroll region is discoverable and keyboard accessible.
@@ -319,8 +346,8 @@ For every material UI change, collect proportionate evidence for:
 - semantics, names, descriptions, errors, and live status announcements;
 - text and non-text contrast across default, hover, focus, active, selected,
   disabled, danger, and high-contrast states;
-- phone, tablet, desktop, narrow reflow, 200% text sizing, and 400% browser zoom
-  or equivalent 320-CSS-pixel reflow;
+- phone, laptop, desktop, applicable tablet, narrow reflow, 200% text sizing,
+  and 400% browser zoom or equivalent 320-CSS-pixel reflow;
 - reduced motion and forced-color or high-contrast behavior;
 - touch target and pointer alternatives;
 - loading, empty, success, error, permission, and destructive states; and
@@ -380,8 +407,8 @@ smallest set that represents the user's visual experience and the design risks:
 - each materially distinct loading, empty, partial, error, permission, or
   recovery state;
 - destructive or consequential review and confirmation;
-- phone, tablet, desktop, and narrow-reflow layouts where the composition
-  changes;
+- phone, laptop, desktop, applicable tablet, and narrow-reflow layouts where
+  the composition changes;
 - long text, translated text, long names, dense data, and other overflow-prone
   fixtures; and
 - before, approved reference, and after states for an intentional design

@@ -24,8 +24,9 @@ The project follows semantic versioning after the first stable release. During a
   system. Proposals remain distinct from maintainer-approved commitments.
 - Added a canonical interface standard for WCAG 2.2 Level AA targeting,
   conventional task-based component selection, visual-system consistency,
-  workflow states, responsive behavior, evidence-backed conformance claims,
-  and a traceable screenshot exchange between automated testing and UI review.
+  workflow states, mandatory continuous responsiveness across representative
+  phone, laptop, and desktop viewports, evidence-backed conformance claims, and
+  a traceable screenshot exchange between automated testing and UI review.
 - Made documentation review and updates part of completion for every implementation,
   behavior, interface, test, script, dependency, configuration, security, deployment,
   operations, architecture, and user-visible change.
