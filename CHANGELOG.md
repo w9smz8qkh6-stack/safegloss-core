@@ -22,6 +22,9 @@ The project follows semantic versioning after the first stable release. During a
 - Added a filtered public Core roadmap with explicit Now/Next/Later/Exploring
   semantics and a disclosure gate from the private SafeGloss-wide strategy
   system. Proposals remain distinct from maintainer-approved commitments.
+- Added a canonical interface standard for WCAG 2.2 Level AA targeting,
+  conventional task-based component selection, visual-system consistency,
+  workflow states, responsive behavior, and evidence-backed conformance claims.
 - Made documentation review and updates part of completion for every implementation,
   behavior, interface, test, script, dependency, configuration, security, deployment,
   operations, architecture, and user-visible change.

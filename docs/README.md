@@ -16,20 +16,23 @@ first reading application source. Read the documents in the order below.
    ownership, request and data flows, persistence, and extension boundaries.
 5. [Product workflows](product/WORKFLOWS.md) — what teachers, students, and
    operators do and how Study and Exam Mode behave.
-6. [Authorization model](security/AUTHORIZATION.md) and
+6. [Interface standard](design/INTERFACE_STANDARD.md) — the shared accessible,
+   conventional, task-first visual and interaction contract, component-choice
+   rules, and WCAG conformance-claim gate.
+7. [Authorization model](security/AUTHORIZATION.md) and
    [security model](development/SECURITY_MODEL.md) — roles, object-level
    enforcement, trust boundaries, and explicit security limitations.
-7. [Generated data model](generated/data-model.md),
+8. [Generated data model](generated/data-model.md),
    [route inventory](generated/routes.md), and
    [application inventory](generated/application-inventory.md) — exact
    structural facts derived from current source.
-8. [Deployment guide](development/DEPLOYMENT.md),
+9. [Deployment guide](development/DEPLOYMENT.md),
    [generated configuration inventory](generated/configuration.md), and
    [generated deployment topology](generated/deployment-topology.md) —
    operator contract and repository-defined runtime topology.
-9. [Commercial relationship](architecture/COMMERCIAL_RELATIONSHIP.md) — how
+10. [Commercial relationship](architecture/COMMERCIAL_RELATIONSHIP.md) — how
    this public upstream relates to the private hosted product.
-10. [Decision records](decisions/) and [changelog](../CHANGELOG.md) — durable
+11. [Decision records](decisions/) and [changelog](../CHANGELOG.md) — durable
    decisions and externally meaningful change history.
 
 The generated/authored documentation contract is recorded in

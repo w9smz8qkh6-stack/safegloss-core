@@ -41,6 +41,11 @@ SafeGloss Core is the vendor-neutral open-source glossary and exam-access applic
   Commercial, provider, customer, research, analytics, billing, or private
   operational context to make the public roadmap more complete. A proposal is
   not a roadmap commitment.
+- Follow `docs/design/INTERFACE_STANDARD.md` for every user-interface,
+  interaction, workflow, accessibility, responsive, or visual-system change.
+  Prefer conventional task-appropriate patterns and shared tokens/components;
+  do not publish a WCAG conformance claim without the scoped evaluation record
+  required by that standard.
 - Update `docs/CURRENT_STATE.md` when product maturity, supported runtime or
   database posture, repository ownership, Core/Commercial boundaries, delivery
   or deployment posture, important limitations, durable active work, or the
