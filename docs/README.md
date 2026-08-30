@@ -27,6 +27,9 @@ first reading application source. Read the documents in the order below.
 8. [Decision records](decisions/) and [changelog](../CHANGELOG.md) — durable
    decisions and externally meaningful change history.
 
+The generated/authored documentation contract is recorded in
+[ADR-0002](decisions/0002-self-refreshing-documentation.md).
+
 ## Authority and freshness
 
 Authored documents explain intent, invariants, limitations, and operational
