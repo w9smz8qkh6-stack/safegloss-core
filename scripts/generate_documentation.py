@@ -212,17 +212,33 @@ def module_path(module: str) -> Path:
     return ROOT / Path(*module.split(".")).with_suffix(".py")
 
 
-def include_module(call: ast.Call) -> str | None:
+def include_spec(call: ast.Call) -> tuple[str | None, str | None]:
     if not isinstance(call.func, ast.Name) or call.func.id != "include" or not call.args:
+        return None, None
+    namespace = None
+    for keyword in call.keywords:
+        if keyword.arg == "namespace":
+            namespace = literal_string(keyword.value)
+    return literal_string(call.args[0]), namespace
+
+
+def module_app_name(module: str) -> str | None:
+    path = module_path(module)
+    if not path.exists():
         return None
-    return literal_string(call.args[0])
+    return literal_string(assignment_value(parse(path), "app_name"))
 
 
 def discover_routes(root_module: str) -> tuple[list[Route], list[Path]]:
     routes: list[Route] = []
     sources: set[Path] = set()
 
-    def visit(module: str, prefix: str = "", stack: tuple[str, ...] = ()) -> None:
+    def visit(
+        module: str,
+        prefix: str = "",
+        stack: tuple[str, ...] = (),
+        namespace: str = "",
+    ) -> None:
         path = module_path(module)
         if not path.exists() or module in stack:
             return
@@ -244,18 +260,35 @@ def discover_routes(root_module: str) -> tuple[list[Route], list[Path]]:
             for keyword in item.keywords:
                 if keyword.arg == "name":
                     name = literal_string(keyword.value) or expression(keyword.value)
+            qualified_name = f"{namespace}:{name}" if namespace and name else name
             if isinstance(view_node, ast.Call):
-                nested = include_module(view_node)
+                nested, explicit_namespace = include_spec(view_node)
                 if nested:
                     nested_path = module_path(nested)
                     if nested_path.exists():
-                        visit(nested, f"{prefix}{pattern}", (*stack, module))
+                        nested_namespace = explicit_namespace or module_app_name(nested) or ""
+                        qualified_namespace = ":".join(
+                            part for part in (namespace, nested_namespace) if part
+                        )
+                        visit(
+                            nested,
+                            f"{prefix}{pattern}",
+                            (*stack, module),
+                            qualified_namespace,
+                        )
                     else:
                         routes.append(
-                            Route(full_pattern, f"include({nested})", name, relative(path))
+                            Route(
+                                full_pattern,
+                                f"include({nested})",
+                                qualified_name,
+                                relative(path),
+                            )
                         )
                     continue
-            routes.append(Route(full_pattern, expression(view_node), name, relative(path)))
+            routes.append(
+                Route(full_pattern, expression(view_node), qualified_name, relative(path))
+            )
 
     visit(root_module)
     return sorted(routes, key=lambda item: (item.pattern, item.source, item.name)), sorted(sources)
