@@ -331,6 +331,88 @@ oracles. Manual and assistive-technology evaluation remains required. Involve
 people with disabilities in significant workflow evaluation when practical,
 and record what was and was not tested.
 
+## Screenshot evidence exchange
+
+The automated-testing and interface-design workstreams share visual evidence
+without sharing authority:
+
+- the testing workstream owns reproducible scenario execution, deterministic
+  data, browser capture, artifact storage, metadata, comparison mechanics, and
+  the functional pass or failure of the tested workflow;
+- the interface-design workstream owns visual interpretation, comparison with
+  this standard and approved references, design findings, severity, proposed
+  corrections, and any resulting token, component, or interaction decision;
+  and
+- neither workstream treats an image-only judgment as evidence for source
+  correctness, authorization, DOM semantics, accessible names, focus order,
+  keyboard behavior, announcements, or complete WCAG conformance.
+
+### Minimum screenshot artifact contract
+
+Every screenshot offered for design analysis must be traceable to:
+
+- a stable scenario and step or state identifier;
+- product and repository commit or build identifier;
+- Core or Commercial scope, route, user role or persona, and fixture identity
+  that contains no real personal data;
+- browser and version, operating system or rendering platform, viewport width
+  and height, device-pixel ratio, zoom or text-size condition, theme or contrast
+  mode, locale, and reduced-motion state;
+- the intended state, such as initial, loading, empty, validation error,
+  permission failure, partial, success, destructive confirmation, or recovery;
+- capture time, expected result, actual workflow result, and any masked or
+  intentionally unstable region; and
+- links to the related DOM/accessibility snapshot, automated check results,
+  trace, console/network evidence, or reference image when those artifacts
+  exist.
+
+Dynamic data must be deterministic or explicitly masked. Masking must not hide
+the layout, status, content-length, overflow, focus, contrast, or error behavior
+being evaluated. Images containing customer, student, credential, provider, or
+production data are not valid design-review artifacts.
+
+### Capture selection
+
+Do not capture every transition merely because automation can. Capture the
+smallest set that represents the user's visual experience and the design risks:
+
+- entry and stable success;
+- each materially distinct loading, empty, partial, error, permission, or
+  recovery state;
+- destructive or consequential review and confirmation;
+- phone, tablet, desktop, and narrow-reflow layouts where the composition
+  changes;
+- long text, translated text, long names, dense data, and other overflow-prone
+  fixtures; and
+- before, approved reference, and after states for an intentional design
+  change.
+
+A functional test can pass while its screenshot exposes weak hierarchy,
+clipping, visual drift, misleading state, poor density, or a missing next
+action. Conversely, a pixel difference is not automatically a defect; expected
+content, rendering, or responsive differences must be interpreted against the
+user story and standard.
+
+### Design-analysis output
+
+Each material visual finding records:
+
+1. screenshot artifact and scenario/state identifiers;
+2. viewport, role, locale, and other relevant capture conditions;
+3. direct observation, kept separate from inference and product judgment;
+4. affected standard rule, token, component, workflow, or approved reference;
+5. impact on task clarity, consistency, responsiveness, accessibility, state
+   completeness, content, interaction, performance stability, or regression
+   risk;
+6. severity, affected scope, recommended smallest correction, and owner; and
+7. whether the test workstream needs a new state, fixture, viewport, metadata
+   field, or regression assertion.
+
+Accepted design findings feed requirements back to the testing workstream. The
+testing workstream then preserves the relevant screenshot or structural
+assertion as regression evidence. This loop turns screenshots into durable
+design evidence rather than an unreviewed image archive.
+
 ## Change checklist
 
 A change is ready only when the reviewer can answer yes to the applicable
