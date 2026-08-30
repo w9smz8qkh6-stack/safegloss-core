@@ -4,6 +4,10 @@ SafeGloss Core is a self-hosted multilingual glossary and exam-access support ap
 
 This repository is the vendor-neutral public core. It does not include the original dissertation research instrument, reading and quiz system, commercial billing, hosted-service configuration, behavioral analytics, or provider-specific roster integrations.
 
+Start with the [documentation index](docs/README.md) for the canonical reading
+order covering architecture, product workflows, authorization, generated data
+and route references, deployment, and the relationship to SafeGloss Commercial.
+
 ## Core features
 
 - Email-based teacher and student accounts
@@ -56,6 +60,8 @@ pytest
 ruff check .
 ruff format --check .
 pip-audit -r requirements.txt
+python scripts/generate_documentation.py --check
+python scripts/check_documentation_links.py
 python scripts/check_documentation_updates.py
 ```
 
@@ -84,6 +90,8 @@ config/     vendor-neutral Django configuration
 ```
 
 The architectural boundary and exclusions are recorded in [ADR-0001](docs/decisions/0001-public-core-boundary.md).
+The current runtime structure, data flows, domain ownership, and extension
+rules are documented in the [system architecture](docs/architecture/SYSTEM.md).
 
 ## Relationship to safegloss.com
 

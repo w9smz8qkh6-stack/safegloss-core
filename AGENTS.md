@@ -21,6 +21,16 @@ SafeGloss Core is the vendor-neutral open-source glossary and exam-access applic
   missing fact, and blocker.
 - Run Django checks, migration checks, pytest, Ruff, dependency audit, and secret scanning before handoff.
 - Run `python scripts/check_documentation_updates.py` before handoff.
+- Run `python scripts/generate_documentation.py` after changing models, routes,
+  settings, services, commands, environment-variable use, or Compose topology.
+  Commit every resulting `docs/generated/` change and run the same command with
+  `--check` before handoff. Generated files are source-derived facts and must
+  never be edited by hand.
+- Start architecture and product orientation at `docs/README.md`. Keep its
+  reading order, authored system/workflow/authorization documents, generated
+  references, public/Commercial boundary, and decision records semantically
+  aligned. Automation does not replace the required human explanation of
+  intent, invariants, limitations, security, or operational consequences.
 - After checks pass, commit task-owned changes and push the current branch to
   its existing configured upstream at a cohesive green checkpoint and task
   completion. Verify branch, remote, divergence, diff, and secret safety;

@@ -11,8 +11,15 @@ request.
 
 Identify the records that govern the changed area before editing:
 
+- `docs/README.md` for the canonical reading order, authority, and freshness
+  contract;
 - `README.md` for public scope, features, setup, supported environments, data
   formats, and primary quality gates;
+- `docs/architecture/SYSTEM.md`, `docs/product/WORKFLOWS.md`, and
+  `docs/security/AUTHORIZATION.md` for architecture, domain intent, data flows,
+  product behavior, roles, and enforcement;
+- `docs/generated/` for source-derived application, model, route,
+  configuration, and Compose topology facts;
 - `CONTRIBUTING.md` and `AGENTS.md` for contributor and agent workflow;
 - `.env.example` and `docs/development/DEPLOYMENT.md` for configuration and
   operator setup;
@@ -47,6 +54,22 @@ Run `python scripts/check_documentation_updates.py` locally. CI runs the same
 diff-based check. It fails when implementation paths change without a durable
 documentation path, but semantic completeness remains the contributor's and
 reviewer's responsibility.
+
+Run `python scripts/generate_documentation.py` whenever models, routes,
+settings, service boundaries, management commands, environment-variable use,
+or Compose topology may have changed. Commit the regenerated files and verify
+them with `python scripts/generate_documentation.py --check`. CI performs the
+same deterministic check. A passing generator proves only that extracted facts
+are current; it cannot explain intent or determine whether authored prose is
+semantically complete.
+
+Never hand-edit `docs/generated/`. Change the source or generator, regenerate,
+and review the result. Generated topology describes committed configuration,
+not live deployment health or provider state.
+
+Run `python scripts/check_documentation_links.py` after changing documentation
+structure. It validates repository-local links and ensures generated Markdown
+retains its ownership marker.
 
 ## Cross-repository and incomplete work
 

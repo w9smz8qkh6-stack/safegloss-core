@@ -33,6 +33,21 @@ Run `python scripts/check_documentation_updates.py` before submitting. Its
 path-based result is evidence only and does not replace comparing the documents
 with the finished behavior.
 
+Start at `docs/README.md` to identify the canonical records. When a change
+affects models, relations, routes, settings, services, commands,
+environment-variable use, or Compose topology, refresh and commit the
+source-derived references:
+
+```bash
+python scripts/generate_documentation.py
+python scripts/generate_documentation.py --check
+```
+
+Do not edit `docs/generated/` by hand. CI reproduces those files and rejects
+drift. Generated inventories and diagrams cover structural facts only;
+contributors must still update authored architecture, workflow, security,
+deployment, decision, and changelog explanations when their meaning changes.
+
 ## Database changes
 
 - Generate migrations with `python manage.py makemigrations`.

@@ -8,6 +8,13 @@ The project follows semantic versioning after the first stable release. During a
 
 ### Changed
 
+- Added a canonical documentation reading path, authored system architecture,
+  product workflows, authorization model, and public Commercial-relationship
+  guide so the product can be understood without first scanning source.
+- Added deterministic, source-derived application, data-model, route,
+  configuration, and Compose-topology references with Mermaid diagrams. CI now
+  rejects stale generated documentation, while standing rules continue to
+  require semantic updates to authored documentation.
 - Made documentation review and updates part of completion for every implementation,
   behavior, interface, test, script, dependency, configuration, security, deployment,
   operations, architecture, and user-visible change.

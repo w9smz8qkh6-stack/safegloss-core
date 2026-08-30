@@ -1,0 +1,5 @@
+project_name = "SafeGloss Core"
+settings_path = "config/settings.py"
+root_urlconf = "config/urls.py"
+compose_files = ["compose.yaml"]
+generated_directory = "docs/generated"

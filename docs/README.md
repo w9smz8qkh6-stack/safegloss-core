@@ -1,0 +1,59 @@
+# SafeGloss Core documentation
+
+This is the canonical entry point for understanding SafeGloss Core without
+first reading application source. Read the documents in the order below.
+
+## Reading order
+
+1. [Repository README](../README.md) — product purpose, public boundary,
+   supported setup, and primary commands.
+2. [System architecture](architecture/SYSTEM.md) — runtime shape, domain
+   ownership, request and data flows, persistence, and extension boundaries.
+3. [Product workflows](product/WORKFLOWS.md) — what teachers, students, and
+   operators do and how Study and Exam Mode behave.
+4. [Authorization model](security/AUTHORIZATION.md) and
+   [security model](development/SECURITY_MODEL.md) — roles, object-level
+   enforcement, trust boundaries, and explicit security limitations.
+5. [Generated data model](generated/data-model.md),
+   [route inventory](generated/routes.md), and
+   [application inventory](generated/application-inventory.md) — exact
+   structural facts derived from current source.
+6. [Deployment guide](development/DEPLOYMENT.md),
+   [generated configuration inventory](generated/configuration.md), and
+   [generated deployment topology](generated/deployment-topology.md) —
+   operator contract and repository-defined runtime topology.
+7. [Commercial relationship](architecture/COMMERCIAL_RELATIONSHIP.md) — how
+   this public upstream relates to the private hosted product.
+8. [Decision records](decisions/) and [changelog](../CHANGELOG.md) — durable
+   decisions and externally meaningful change history.
+
+## Authority and freshness
+
+Authored documents explain intent, invariants, limitations, and operational
+judgment. Generated documents record facts that can be extracted safely from
+the repository. Generated files carry a warning and must not be edited by hand.
+
+Run:
+
+```bash
+python scripts/generate_documentation.py
+python scripts/generate_documentation.py --check
+python scripts/check_documentation_links.py
+python scripts/check_documentation_updates.py
+```
+
+CI rejects generated-reference drift and implementation changes that omit a
+durable documentation update. The path check cannot decide whether prose is
+accurate; contributors must still compare affected authored documents with the
+finished behavior as described in
+[documentation maintenance](development/DOCUMENTATION_MAINTENANCE.md).
+
+Generated references describe committed repository configuration. They do not
+claim that a deployed environment is running, healthy, or configured exactly
+like the repository. Live operational state must be verified by the operator.
+
+## Historical material
+
+Decision records preserve accepted decisions. Superseded plans, experiments,
+and implementation notes must be labeled historical and must not override the
+documents in this index.
