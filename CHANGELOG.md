@@ -19,6 +19,9 @@ The project follows semantic versioning after the first stable release. During a
   repository orientation and change review. It summarizes durable lifecycle,
   integration, delivery, and limitation context while requiring volatile Git,
   CI, PR, and environment facts to be verified live.
+- Added a filtered public Core roadmap with explicit Now/Next/Later/Exploring
+  semantics and a disclosure gate from the private SafeGloss-wide strategy
+  system. Proposals remain distinct from maintainer-approved commitments.
 - Made documentation review and updates part of completion for every implementation,
   behavior, interface, test, script, dependency, configuration, security, deployment,
   operations, architecture, and user-visible change.

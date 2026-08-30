@@ -82,6 +82,12 @@ def main() -> int:
     )
     if links.returncode:
         return links.returncode
+    strategy = subprocess.run(
+        [sys.executable, "scripts/check_strategy_records.py"],
+        check=False,
+    )
+    if strategy.returncode:
+        return strategy.returncode
 
     paths = changed_paths(args.base_ref)
     implementation_paths = sorted(path for path in paths if not is_documentation(path))

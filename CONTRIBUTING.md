@@ -52,6 +52,11 @@ deployment, decision, and changelog explanations when their meaning changes.
 Update `docs/CURRENT_STATE.md` only when its lifecycle, ownership, integration,
 delivery, limitations, durable active-work, or next-checkpoint claims change.
 
+Use `docs/product/ROADMAP.md` for reviewed public Core direction. An issue,
+suggestion, or contribution is not automatically a roadmap commitment. Do not
+copy private Commercial strategy into a public proposal; maintainers promote
+only the complete vendor-neutral scope that is safe and useful to disclose.
+
 ## Database changes
 
 - Generate migrations with `python manage.py makemigrations`.

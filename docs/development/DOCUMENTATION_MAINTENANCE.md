@@ -16,6 +16,9 @@ Identify the records that govern the changed area before editing:
 - `docs/CURRENT_STATE.md` for durable lifecycle, engineering/integration
   posture, limitations, active workstream, and next checkpoint; use live Git,
   PR, CI, and operator evidence for volatile status;
+- `docs/product/ROADMAP.md` for reviewed public Core direction, outcomes,
+  horizons, dependencies, success signals, and the private-strategy disclosure
+  boundary;
 - `README.md` for public scope, features, setup, supported environments, data
   formats, and primary quality gates;
 - `docs/architecture/SYSTEM.md`, `docs/product/WORKFLOWS.md`, and
@@ -81,6 +84,15 @@ or the next integration checkpoint changes by meaning. Review it for every
 such change even when no automated path rule can establish semantic impact.
 Ordinary implementation changes do not require an edit when all of its claims
 remain accurate.
+
+Update the public roadmap when an approved Core initiative changes horizon,
+outcome, dependencies, success or learning signal, public ownership, or
+delivery status. Public proposals and issue discussion do not authorize roadmap
+promotion. Never import private Commercial, provider, customer, research,
+analytics, billing, or operational context; copy only a reviewed,
+vendor-neutral public projection and preserve Core-first integration order.
+Run `python scripts/check_strategy_records.py` after changing the public
+roadmap; CI validates stable initiative IDs and roadmap table shape.
 
 ## Cross-repository and incomplete work
 

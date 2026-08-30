@@ -10,24 +10,26 @@ first reading application source. Read the documents in the order below.
 2. [Current development state](CURRENT_STATE.md) — lifecycle, current
    engineering and integration posture, limitations, next checkpoint, and the
    boundary between durable documentation and live verification.
-3. [System architecture](architecture/SYSTEM.md) — runtime shape, domain
+3. [Public roadmap](product/ROADMAP.md) — reviewed, publicly disclosable Core
+   direction and its promotion boundary from private SafeGloss-wide strategy.
+4. [System architecture](architecture/SYSTEM.md) — runtime shape, domain
    ownership, request and data flows, persistence, and extension boundaries.
-4. [Product workflows](product/WORKFLOWS.md) — what teachers, students, and
+5. [Product workflows](product/WORKFLOWS.md) — what teachers, students, and
    operators do and how Study and Exam Mode behave.
-5. [Authorization model](security/AUTHORIZATION.md) and
+6. [Authorization model](security/AUTHORIZATION.md) and
    [security model](development/SECURITY_MODEL.md) — roles, object-level
    enforcement, trust boundaries, and explicit security limitations.
-6. [Generated data model](generated/data-model.md),
+7. [Generated data model](generated/data-model.md),
    [route inventory](generated/routes.md), and
    [application inventory](generated/application-inventory.md) — exact
    structural facts derived from current source.
-7. [Deployment guide](development/DEPLOYMENT.md),
+8. [Deployment guide](development/DEPLOYMENT.md),
    [generated configuration inventory](generated/configuration.md), and
    [generated deployment topology](generated/deployment-topology.md) —
    operator contract and repository-defined runtime topology.
-8. [Commercial relationship](architecture/COMMERCIAL_RELATIONSHIP.md) — how
+9. [Commercial relationship](architecture/COMMERCIAL_RELATIONSHIP.md) — how
    this public upstream relates to the private hosted product.
-9. [Decision records](decisions/) and [changelog](../CHANGELOG.md) — durable
+10. [Decision records](decisions/) and [changelog](../CHANGELOG.md) — durable
    decisions and externally meaningful change history.
 
 The generated/authored documentation contract is recorded in

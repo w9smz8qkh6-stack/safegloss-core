@@ -23,6 +23,8 @@ jobs:
         run: python scripts/generate_documentation.py --check
       - name: Documentation links and ownership
         run: python scripts/check_documentation_links.py
+      - name: Public roadmap records
+        run: python scripts/check_strategy_records.py
 
   test:
     runs-on: ubuntu-latest

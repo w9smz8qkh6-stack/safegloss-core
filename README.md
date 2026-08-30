@@ -8,6 +8,9 @@ Start with the [documentation index](docs/README.md) for the canonical reading
 order covering current development state, architecture, product workflows,
 authorization, generated data and route references, deployment, and the
 relationship to SafeGloss Commercial.
+Reviewed public direction is maintained in the
+[Core roadmap](docs/product/ROADMAP.md); proposals are not commitments until
+maintainers promote them explicitly.
 
 ## Core features
 

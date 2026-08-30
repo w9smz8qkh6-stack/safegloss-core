@@ -9,6 +9,8 @@
 - [ ] Ruff check and format check pass
 - [ ] Governing documentation was compared with the finished behavior and updated
 - [ ] `docs/CURRENT_STATE.md` was reviewed and updated if its durable claims changed
+- [ ] The public roadmap and private-strategy disclosure boundary were reviewed when product direction or priority changed
+- [ ] `python scripts/check_strategy_records.py` passes
 - [ ] Generated documentation was refreshed and `--check` passes
 - [ ] Documentation completion check passes
 - [ ] No credentials, private data, provider payloads, or unlicensed content added
@@ -20,6 +22,10 @@ changelog, project-state, workstream, or decision records reviewed and changed.
 State whether the current-state summary changed; if not, explain why its
 lifecycle, boundaries, posture, limitations, and integration checkpoint remain
 accurate.
+
+If this implements a roadmap initiative, list its public roadmap entry,
+outcome, success signal, resulting status, and downstream Commercial impact.
+Do not include private strategy details.
 
 If another canonical SafeGloss repository is affected, list its documentation
 changes and the integration order.

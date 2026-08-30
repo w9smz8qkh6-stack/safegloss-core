@@ -33,6 +33,9 @@ contracts.
   authorization, deployment, and boundary documentation plus deterministic
   source-generated application, model, route, configuration, and Compose
   references.
+- `docs/product/ROADMAP.md` is the filtered public projection of reviewed Core
+  direction. The private Commercial strategy system retains the complete
+  SafeGloss-wide idea and prioritization record.
 - Protected-branch delivery uses a scoped branch, required CI, and required
   human review. Standing delivery rules do not permit bypassing those gates.
 
@@ -48,12 +51,12 @@ contracts.
 
 ## Active work and next checkpoint
 
-The commit containing this record includes the self-refreshing and
-self-referencing documentation baseline. When it is not yet on the protected
-default branch, the immediate delivery checkpoint is required review and merge
-before downstream Commercial integration. Do not infer whether that checkpoint
-is still open from this file; verify the current branch, pull requests, and CI
-live.
+The commit containing this record includes the self-refreshing,
+self-referencing, and public-roadmap documentation baseline. When it is not yet
+on the protected default branch, the immediate delivery checkpoint is required
+review and merge before downstream Commercial integration. Do not infer whether
+that checkpoint is still open from this file; verify the current branch, pull
+requests, and CI live.
 
 Use repository evidence for the active development position:
 
@@ -76,7 +79,7 @@ workstream, or its next integration checkpoint. Ordinary fixes do not require
 a wording change when every claim remains accurate.
 
 Agents and contributors must begin orientation through `docs/README.md`, read
-this record, then follow its links to the governing documents and perform the
-live checks relevant to the task. Automation can require that documentation
-was considered, but reviewers remain responsible for deciding whether this
-summary changed by meaning.
+this record and the public roadmap for product-planning work, then follow their
+links to the governing documents and perform the live checks relevant to the
+task. Automation can require that documentation was considered, but reviewers
+remain responsible for deciding whether this summary changed by meaning.
