@@ -33,6 +33,30 @@ Run `python scripts/check_documentation_updates.py` before submitting. Its
 path-based result is evidence only and does not replace comparing the documents
 with the finished behavior.
 
+Start at `docs/README.md`, read `docs/CURRENT_STATE.md`, and use live Git/PR/CI
+evidence for volatile status before identifying the remaining canonical
+records. When a change
+affects models, relations, routes, settings, services, commands,
+environment-variable use, or Compose topology, refresh and commit the
+source-derived references:
+
+```bash
+python scripts/generate_documentation.py
+python scripts/generate_documentation.py --check
+```
+
+Do not edit `docs/generated/` by hand. CI reproduces those files and rejects
+drift. Generated inventories and diagrams cover structural facts only;
+contributors must still update authored architecture, workflow, security,
+deployment, decision, and changelog explanations when their meaning changes.
+Update `docs/CURRENT_STATE.md` only when its lifecycle, ownership, integration,
+delivery, limitations, durable active-work, or next-checkpoint claims change.
+
+Use `docs/product/ROADMAP.md` for reviewed public Core direction. An issue,
+suggestion, or contribution is not automatically a roadmap commitment. Do not
+copy private Commercial strategy into a public proposal; maintainers promote
+only the complete vendor-neutral scope that is safe and useful to disclose.
+
 ## Database changes
 
 - Generate migrations with `python manage.py makemigrations`.

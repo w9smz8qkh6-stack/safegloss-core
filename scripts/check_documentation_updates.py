@@ -70,6 +70,25 @@ def main() -> int:
     )
     args = parser.parse_args()
 
+    generated = subprocess.run(
+        [sys.executable, "scripts/generate_documentation.py", "--check"],
+        check=False,
+    )
+    if generated.returncode:
+        return generated.returncode
+    links = subprocess.run(
+        [sys.executable, "scripts/check_documentation_links.py"],
+        check=False,
+    )
+    if links.returncode:
+        return links.returncode
+    strategy = subprocess.run(
+        [sys.executable, "scripts/check_strategy_records.py"],
+        check=False,
+    )
+    if strategy.returncode:
+        return strategy.returncode
+
     paths = changed_paths(args.base_ref)
     implementation_paths = sorted(path for path in paths if not is_documentation(path))
     documentation_paths = sorted(path for path in paths if is_documentation(path))

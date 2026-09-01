@@ -1,0 +1,31 @@
+{
+  "generated_content_sha256": "594da58a2f2a1cf9d9bbfe34fce638434427904e24ade1fd3c8278bd25b03648",
+  "generator_version": 1,
+  "inputs": [
+    ".env.example",
+    "accounts/models.py",
+    "accounts/urls.py",
+    "compose.yaml",
+    "config/settings.py",
+    "config/urls.py",
+    "core/management/commands/seed_languages.py",
+    "core/models.py",
+    "courses/access.py",
+    "courses/models.py",
+    "courses/urls.py",
+    "documentation.toml",
+    "glossary/models.py",
+    "glossary/urls.py",
+    "scripts/check_documentation_updates.py",
+    "scripts/generate_documentation.py"
+  ],
+  "outputs": [
+    "docs/generated/application-inventory.md",
+    "docs/generated/configuration.md",
+    "docs/generated/data-model.md",
+    "docs/generated/deployment-topology.md",
+    "docs/generated/manifest.json",
+    "docs/generated/routes.md"
+  ],
+  "project": "SafeGloss Core"
+}
